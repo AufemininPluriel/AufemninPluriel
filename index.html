@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Au Féminin Pluriel | Accompagnement Émotionnel, Thérapeutique & Périnatal</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== RESET & VARIABLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        :root {
+            --bg-site: #f8f6f9;
+            --surface: #ffffff;
+            --text-main: #2a242d;
+            --text-muted: #5e5461;
+            --accent-primary: #7b4f80;
+            --accent-light: #f3ebf5;
+            --accent-dark: #58335c;
+            --dark-header: #38243c;
+            --shadow-subtle: 0 4px 20px rgba(56, 36, 60, 0.04);
+            --shadow-hover: 0 10px 30px rgba(56, 36, 60, 0.08);
+            --radius-lg: 16px;
+            --radius-md: 8px;
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-site);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background-color: var(--dark-header);
+            color: var(--surface);
+            padding: 6rem 2rem 5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .badge-inclusion {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            margin-bottom: 2rem;
+            letter-spacing: 0.5px;
+        }
+
+        header h1 {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        header h2 {
+            font-weight: 300;
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: rgba(255, 255, 255, 0.85);
+            letter-spacing: 0.5px;
+        }
+
+        .quote-container {
+            max-width: 650px;
+            margin: 2rem auto 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 1.5rem;
+        }
+
+        .quote {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.5;
+        }
+
+        /* ===== NAVIGATION (sans dropdown) ===== */
+        nav {
+            background-color: var(--surface);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(56, 36, 60, 0.03);
+            border-bottom: 1px solid rgba(56, 36, 60, 0.03);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 15px;
+            z-index: 1100;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background-color: var(--text-main);
+            margin: 5px 0;
+            transition: 0.3s ease;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 10px;
+        }
+
+        nav ul li a {
+            display: block;
+            color: var(--text-main);
+            padding: 20px 18px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 15px;
+            left: 18px;
+            right: 18px;
+            height: 2px;
+            background-color: var(--accent-primary);
+            transform: scaleX(0);
+            transition: transform 0.2s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-primary);
+        }
+
+        nav ul li a:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 0 24px;
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            background-color: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 3.5rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-subtle);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        h3 {
+            font-family: var(--font-serif);
+            color: var(--text-main);
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+
+        h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-primary);
+            border-radius: 2px;
+        }
+
+        h4 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent-dark);
+            margin: 2rem 0 1rem 0;
+        }
+
+        .service-block {
+            margin-top: 3rem;
+        }
+
+        .service-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-main);
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-title svg {
+            width: 28px;
+            height: 28px;
+            fill: none;
+            stroke: var(--accent-primary);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+        }
+        .service-title svg.fill-primary {
+            fill: var(--accent-primary);
+            stroke: none;
+        }
+        .service-title svg .fill-white {
+            fill: white;
+            stroke: none;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            font-size: 1.05rem;
+        }
+
+        strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .list-unstyled {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .list-unstyled li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        .list-unstyled li::before {
+            content: "•";
+            color: var(--accent-primary);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 5px;
+            top: -4px;
+        }
+
+        .box-info {
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+        }
+
+        .box-info.warning {
+            background-color: #fffafb;
+            border-left: 4px solid #b33951;
+            color: #611827;
+        }
+
+        .box-info.highlight {
+            background-color: var(--accent-light);
+            border-left: 4px solid var(--accent-primary);
+            color: var(--accent-dark);
+        }
+
+        .box-info.social {
+            background-color: #f0f4fa;
+            border-left: 4px solid #4a6fa5;
+            color: #1c3b5a;
+            font-style: italic;
+        }
+
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            margin: 2.5rem 0;
+            border-radius: var(--radius-md);
+            box-shadow: 0 0 0 1px rgba(56, 36, 60, 0.05);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            background-color: var(--surface);
+            font-size: 1rem;
+        }
+
+        th {
+            background-color: #fcfafc;
+            color: var(--text-main);
+            font-weight: 600;
+            padding: 16px 20px;
+            border-bottom: 2px solid rgba(56, 36, 60, 0.04);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 16px 20px;
+            border-bottom: 1px solid rgba(56, 36, 60, 0.04);
+            color: var(--text-muted);
+            vertical-align: top;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: #fdfbfe;
+        }
+
+        td small {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .pack-name {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .pack-desc {
+            display: block;
+            font-weight: 400;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+            line-height: 1.5;
+        }
+
+        .pack-note {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 0.5rem;
+            padding-left: 0.5rem;
+            border-left: 2px solid var(--accent-primary);
+        }
+
+        /* ===== NOUVEAU STYLE POUR LES PACKS ===== */
+        .packs-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .pack-card {
+            background-color: var(--bg-site);
+            border-radius: var(--radius-md);
+            padding: 1.75rem 2rem;
+            border-left: 4px solid var(--accent-primary);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .pack-card:hover {
+            transform: translateX(4px);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .pack-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .pack-card-title {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            margin: 0;
+        }
+
+        .pack-card-price {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            background: var(--surface);
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+            box-shadow: 0 2px 8px rgba(56, 36, 60, 0.06);
+            white-space: nowrap;
+        }
+
+        .pack-card-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .pack-card-desc strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .pack-card-desc br {
+            display: block;
+            content: "";
+            margin-top: 0.5rem;
+        }
+
+        .pack-card-note {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-style: italic;
+            padding-left: 0.75rem;
+            border-left: 2px solid var(--accent-primary);
+            margin-top: 0.25rem;
+        }
+
+        .pack-card-note strong {
+            color: var(--text-main);
+            font-style: normal;
+        }
+
+        @media (max-width: 600px) {
+            .pack-card-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .pack-card-price {
+                align-self: flex-start;
+                font-size: 1.3rem;
+                padding: 0.15rem 0.8rem;
+            }
+            .pack-card {
+                padding: 1.25rem 1.25rem;
+            }
+        }
+
+        /* ===== NOUVEAUX STYLES POUR LES GRILLES DE RECUADROS ===== */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .grid-card {
+            background-color: var(--bg-site);
+            border-radius: var(--radius-md);
+            padding: 1.75rem 1.5rem;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid rgba(123, 79, 128, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        .grid-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--accent-primary);
+        }
+
+        .grid-card svg {
+            width: 48px;
+            height: 48px;
+            fill: none;
+            stroke: var(--accent-primary);
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+        }
+
+        .grid-card svg.fill-primary {
+            fill: var(--accent-primary);
+            stroke: none;
+        }
+        .grid-card svg .fill-white {
+            fill: white;
+            stroke: none;
+        }
+
+        .grid-card .card-label {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+
+        .grid-card .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .grid-card .card-link {
+            font-weight: 500;
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .grid-card .card-link:hover {
+            border-bottom-color: var(--accent-primary);
+        }
+
+        /* pour la section tarifs (2 cartes) */
+        .grid-cards.two-cols {
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        }
+
+        /* ===== FORMATION ===== */
+        .formation-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .formation-list li {
+            position: relative;
+            padding: 1.25rem 1.5rem 1.25rem 2rem;
+            margin-bottom: 1.25rem;
+            background: var(--bg-site);
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--accent-primary);
+            transition: background 0.2s ease;
+        }
+
+        .formation-list li:hover {
+            background: var(--accent-light);
+        }
+
+        .formation-list li strong {
+            display: block;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 0.2rem;
+        }
+
+        .formation-orga {
+            display: block;
+            font-weight: 500;
+            color: var(--accent-dark);
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .formation-date {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--dark-header);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 4rem 2rem;
+            font-size: 0.95rem;
+        }
+
+        footer .badge-inclusion {
+            margin-bottom: 1.5rem;
+        }
+
+        footer a {
+            color: var(--surface);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+            display: inline-block;
+            margin: 0 8px;
+        }
+
+        footer a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* ===== ACCESSIBILITÉ : ICONES ===== */
+        .access-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 1.25rem;
+            padding: 0.5rem 0;
+        }
+
+        .access-row svg {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            stroke: var(--accent-primary);
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            margin-top: 2px;
+        }
+
+        .access-row .access-text {
+            flex: 1;
+        }
+
+        .access-row .access-text p {
+            margin-bottom: 0;
+            font-size: 1.05rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            header {
+                padding: 4rem 1.5rem 3.5rem;
+            }
+            header h1 {
+                font-size: 2.6rem;
+            }
+            header h2 {
+                font-size: 1.15rem;
+            }
+            section {
+                padding: 2.5rem 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+                margin-left: auto;
+            }
+
+            .nav-container {
+                width: 100%;
+                justify-content: space-between;
+                padding: 10px 20px;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: var(--surface);
+                flex-direction: column;
+                gap: 0;
+                padding: 20px;
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+                box-shadow: 0 10px 20px rgba(56, 36, 60, 0.05);
+                overflow-y: auto;
+            }
+
+            nav ul.active {
+                transform: translateX(0);
+            }
+
+            nav ul li a {
+                padding: 16px 20px;
+                font-size: 1.1rem;
+                border-bottom: 1px solid rgba(56, 36, 60, 0.03);
+            }
+
+            nav ul li a::after {
+                display: none;
+            }
+
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -6px);
+            }
+
+            section {
+                padding: 2rem 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.8rem;
+            }
+
+            .formation-list li {
+                padding: 1rem 1rem 1rem 1.25rem;
+            }
+
+            .access-row {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .packs-grid {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#contenu-principal" class="sr-only">Passer au contenu principal</a>
+
+    <header>
+        <h1>Au Féminin Pluriel</h1>
+        <h2>Accompagnement Émotionnel, Thérapeutique &amp; Périnatal</h2>
+        <div class="quote-container">
+            <p class="quote">"Un espace serein et sécurisant dédié au cheminement des femmes, des minorités sexuelles et de genre et de toute personne en quête de reconnexion intérieure."</p>
+        </div>
+    </header>
+
+    <nav aria-label="Menu principal">
+        <div class="nav-container">
+            <button class="menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Ouvrir le menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="nav-menu">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#specialites">Spécialités</a></li>
+                <li><a href="#tarifs">Tarifs</a></li>
+                <li><a href="#formation">Formation</a></li>
+                <li><a href="#parcours">Parcours &amp; engagement</a></li>
+                <li><a href="#acces">Infos &amp; Accessibilité</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container" id="contenu-principal">
+
+        <!-- ==================== ACCUEIL ==================== -->
+        <section id="accueil">
+            <h3>Vous êtes au bon endroit…</h3>
+            <p><strong>Au Féminin Pluriel</strong> est un cabinet d’accompagnement émotionnel, thérapeutique et périnatal pensé comme une parenthèse douce et bienveillante. Ici, chaque parcours est accueilli dans sa singularité, sans jugement, avec une attention particulière pour les femmes, les minorités sexuelles et de genre et toute personne désireuse d’explorer ses ressources intérieures.</p>
+            <p>Que vous traversiez une période de transition, un questionnement identitaire, une préparation à la naissance ou un besoin d’apaiser des mémoires douloureuses, vous trouverez un espace d’écoute profonde et de sécurité. L’approche proposée est globale, respectueuse de votre rythme et de votre histoire.</p>
+            <p>Je vous invite à prendre le temps de découvrir les différentes offres ci-dessous. Prenez soin de vous.</p>
+
+            <h4>Et les hommes alors ?</h4>
+            <p>Parce que la sensibilité, l'écoute de soi et la vulnérabilité ne connaissent pas de frontières de genre, nous portons toutes et tous une part de féminité en soi. Messieurs, l'espace <em>Au Féminin Pluriel</em> s'adresse également à vous si vous vous reconnaissez dans cette approche globale, introspective et douce du soin.</p>
+            <p>Que ce soit pour traverser une transition de vie, travailler sur une mémoire traumatique ou explorer vos émotions en profondeur, vous êtes pleinement les bienvenus.</p>
+            <p>Si, toutefois, l'énergie ou le cadre de ce cabinet ne correspondaient pas à vos attentes ou à vos besoins spécifiques, un·e autre professionnel·le de l'accompagnement ou de la santé sera sans doute plus indiqué·e pour votre prise en charge, et je me ferai un devoir de vous orienter au mieux.</p>
+        </section>
+
+        <!-- ==================== SPÉCIALITÉS (GRILLE DE RECUADROS) ==================== -->
+        <section id="specialites">
+            <h3>Nos Spécialités</h3>
+            <p>Chaque accompagnement est unique. Choisissez la pratique qui résonne avec vos besoins, ou combinez-les pour un parcours sur mesure.</p>
+
+            <div class="grid-cards">
+                <!-- Hypnose -->
+                <a href="#hypnose" class="grid-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/>
+                        <path d="M12 6a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"/>
+                        <path d="M12 10a2 2 0 1 0 2 2 2 2 0 0 0-2-2z"/>
+                    </svg>
+                    <span class="card-label">Hypnose Ericksonienne</span>
+                    <p class="card-desc">Accès aux ressources intérieures pour lever les blocages</p>
+                </a>
+                <!-- EMDR -->
+                <a href="#emdr" class="grid-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z" />
+                        <circle cx="12" cy="12" r="3" />
+                        <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+                    </svg>
+                    <span class="card-label">EMDR – DSA</span>
+                    <p class="card-desc">Traitement des traumatismes et mémoires douloureuses</p>
+                </a>
+                <!-- Allaitement -->
+                <a href="#allaitement" class="grid-card">
+                    <svg viewBox="0 0 24 24" class="fill-primary">
+                        <path d="M12 2C12 2 6 8 6 14a6 6 0 0 0 12 0c0-6-6-12-6-12z"/>
+                        <circle cx="12" cy="14" r="2.5" class="fill-white"/>
+                    </svg>
+                    <span class="card-label">Allaitement</span>
+                    <p class="card-desc">Préparation et soutien technique et émotionnel</p>
+                </a>
+                <!-- Portage -->
+                <a href="#portage" class="grid-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="6" r="3"/>
+                        <path d="M6 13c0-1.5 1-3 3-3h6c2 0 3 1.5 3 3v2H6v-2z"/>
+                        <path d="M9 12v4"/>
+                        <path d="M15 12v4"/>
+                        <circle cx="12" cy="15" r="1.5" fill="var(--accent-primary)" stroke="none"/>
+                        <path d="M10 17h4v2h-4z" fill="var(--accent-primary)" stroke="none"/>
+                    </svg>
+                    <span class="card-label">Portage Physiologique</span>
+                    <p class="card-desc">Ateliers pratiques pour un portage en toute sécurité</p>
+                </a>
+                <!-- Signes -->
+                <a href="#signes" class="grid-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 11v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1h-3l1-4a1 1 0 0 0-1-1h-1a1 1 0 0 0-1 1l-2 5H7a1 1 0 0 0-1 1z"/>
+                        <path d="M7 11h-2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2"/>
+                    </svg>
+                    <span class="card-label">Signes associés à la parole</span>
+                    <p class="card-desc">Communiquer avec bébé avant la parole (LSF)</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- ==================== DÉTAILS DES ACCOMPAGNEMENTS ==================== -->
+        <section id="accompagnements">
+            <h3>Mes Accompagnements</h3>
+            <!-- (les blocs détaillés restent inchangés) -->
+            <!-- Hypnose -->
+            <div class="service-block" id="hypnose">
+                <h4 class="service-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/>
+                        <path d="M12 6a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"/>
+                        <path d="M12 10a2 2 0 1 0 2 2 2 2 0 0 0-2-2z"/>
+                    </svg>
+                    Hypnose Ericksonienne
+                </h4>
+                <p>L’hypnose ericksonienne active un état de conscience modifié naturel qui facilite l'accès à vos ressources intérieures inconscientes. Loin des clichés, vous conservez votre libre arbitre à chaque instant. Ce processus s'avère précieux pour lever des blocages émotionnels, appréhender sereinement la naissance, apaiser les états d'anxiété, ou encore soutenir un sevrage tabagique ou d'autres dépendances (alcool, substances, etc.).</p>
+                <p><em>Nous progressons au rythme de vos besoins, dans un cadre éthique rigoureusement sécurisé.</em></p>
+
+                <div class="box-info warning" role="note">
+                    <strong>Précision importante :</strong>
+                    <p style="margin-top: 0.5rem;">Bien que s'inscrivant dans la catégorie des thérapies brèves, l'évolution psychologique demeure propre à chacun·e. Le nombre total de séances ne peut être défini à l'avance et un suivi régulier sur plusieurs mois est fréquemment requis pour ancrer des résultats pérennes.</p>
+                    <p style="margin-top: 0.5rem;"><strong>Déroulement de la première séance :</strong> Le premier rendez-vous est entièrement dédié à une prise de contact approfondie. Ce temps d’anamnèse me permet de recueillir un maximum d’informations sur votre histoire, votre environnement et votre problématique. Grâce à cela, je peux affiner ma connaissance de votre singularité et construire, pour les séances suivantes, un accompagnement parfaitement individualisé et adapté à vos besoins spécifiques.</p>
+                </div>
+            </div>
+
+            <!-- EMDR -->
+            <div class="service-block" id="emdr">
+                <h4 class="service-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z" />
+                        <circle cx="12" cy="12" r="3" />
+                        <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+                    </svg>
+                    EMDR – DSA (Désensibilisation par Stimulations Alternées)
+                </h4>
+                <p>L'EMDR-DSA est une approche thérapeutique validée scientifiquement pour le traitement des traumatismes (événements de vie douloureux, violences, parcours obstétricaux complexes, deuils). Par le biais de stimulations bilatérales alternées (visuelles ou tactiles), le cerveau est accompagné dans la métabolisation des mémoires traumatiques, atténuant ainsi la charge émotionnelle associée au présent.</p>
+
+                <div class="box-info warning" role="note">
+                    <strong>Précision importante :</strong>
+                    <p style="margin-top: 0.5rem;">Bien que s'inscrivant dans la catégorie des thérapies brèves, l'évolution psychologique demeure propre à chacun·e. Le nombre total de séances ne peut être défini à l'avance et un suivi régulier sur plusieurs mois est fréquemment requis pour ancrer des résultats pérennes.</p>
+                    <p style="margin-top: 0.5rem;"><strong>Déroulement de la première séance :</strong> Le premier rendez-vous est entièrement dédié à une prise de contact approfondie. Ce temps d’anamnèse me permet de recueillir un maximum d’informations sur votre histoire, votre environnement et votre problématique. Grâce à cela, je peux affiner ma connaissance de votre singularité et construire, pour les séances suivantes, un accompagnement parfaitement individualisé et adapté à vos besoins spécifiques.</p>
+                </div>
+            </div>
+
+            <!-- Allaitement -->
+            <div class="service-block" id="allaitement">
+                <h4 class="service-title">
+                    <svg viewBox="0 0 24 24" class="fill-primary">
+                        <path d="M12 2C12 2 6 8 6 14a6 6 0 0 0 12 0c0-6-6-12-6-12z"/>
+                        <circle cx="12" cy="14" r="2.5" class="fill-white"/>
+                    </svg>
+                    Allaitement maternel
+                </h4>
+                <p>L'allaitement se prépare et s'accompagne de manière individualisée. Je vous apporte un étayage technique et émotionnel pour soutenir votre choix, répondre à vos interrogations légitimes et surmonter d'éventuelles difficultés.</p>
+                <ul class="list-unstyled">
+                    <li><strong>Cours de préparation à l'allaitement maternel :</strong> 3 séances d’1h pour intégrer la physiologie de la lactation, appréhender les postures optimales, comprendre les rythmes du nouveau-né et prévenir les inconforts afin d'initier votre allaitement sereinement.</li>
+                </ul>
+            </div>
+
+            <!-- Portage -->
+            <div class="service-block" id="portage">
+                <h4 class="service-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="6" r="3"/>
+                        <path d="M6 13c0-1.5 1-3 3-3h6c2 0 3 1.5 3 3v2H6v-2z"/>
+                        <path d="M9 12v4"/>
+                        <path d="M15 12v4"/>
+                        <circle cx="12" cy="15" r="1.5" fill="var(--accent-primary)" stroke="none"/>
+                        <path d="M10 17h4v2h-4z" fill="var(--accent-primary)" stroke="none"/>
+                    </svg>
+                    Ateliers de Portage Physiologique
+                </h4>
+                <p>Le portage constitue un prolongement naturel de la vie intra-utérine, garantissant la sécurité affective du nourrisson. Au cours de ces séances, je vous transmets les règles d'or de sécurité et les techniques d’ajustement des nouages, préservant ainsi votre posture et le développement moteur de votre enfant.</p>
+                <p>Des <strong>ateliers collectifs</strong> sont également proposés pour échanger et expérimenter en petit groupe (4 à 6 familles) – un moment convivial et instructif.</p>
+            </div>
+
+            <!-- Signes -->
+            <div class="service-block" id="signes">
+                <h4 class="service-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 11v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1h-3l1-4a1 1 0 0 0-1-1h-1a1 1 0 0 0-1 1l-2 5H7a1 1 0 0 0-1 1z"/>
+                        <path d="M7 11h-2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2"/>
+                    </svg>
+                    Atelier Signes associés à la parole
+                </h4>
+                <p>Bien avant l'accès à la parole, l'enfant manifeste une intention de communiquer. L'utilisation d'outils gestuels réduit les frustrations mutuelles, enrichit la création du lien et offre un aperçu privilégié du monde cognitif de votre bébé.</p>
+                <p>Cet atelier se décline en un <strong>module de 3 séances</strong> abordant successivement :</p>
+                <ul class="list-unstyled">
+                    <li><strong>Les besoins fondamentaux</strong> (repas, sommeil, hygiène, etc.)</li>
+                    <li><strong>Les émotions</strong> (joie, colère, peur, surprise, etc.)</li>
+                    <li><strong>L'environnement de bébé</strong> (famille, animaux, lieux, etc.)</li>
+                </ul>
+                <div class="box-info highlight" role="note">
+                    <strong>Engagement déontologique :</strong> Par profond respect pour l'histoire, l'identité et la culture de la communauté sourde et malentendante, le vocabulaire dispensé au cours de ces ateliers est exclusivement extrait de la <strong>Langue des Signes Française (LSF)</strong>.
+                </div>
+                <p>Ces ateliers ludiques et structurés (en individuel ou en collectif) vous offrent des clés fiables pour enrichir les interactions quotidiennes tout en sensibilisant dès le premier âge à la diversité linguistique.</p>
+            </div>
+        </section>
+
+        <!-- ==================== TARIFS (GRILLE DE RECUADROS) ==================== -->
+        <section id="tarifs">
+            <h3>Nos Tarifs</h3>
+            <p>Deux volets pour vous guider : consultez les prestations à l'unité ou optez pour un forfait global. Chaque formule est pensée pour s'adapter à votre projet.</p>
+
+            <div class="grid-cards two-cols">
+                <a href="#tarifs-carte" class="grid-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="5" width="20" height="14" rx="2" />
+                        <path d="M2 10h20" />
+                    </svg>
+                    <span class="card-label">Tarifs à la carte</span>
+                    <p class="card-desc">Consultations individuelles, ateliers, forfaits courts</p>
+                </a>
+                <a href="#packs-perinatalite" class="grid-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                        <path d="M2 17l10 5 10-5" />
+                        <path d="M2 12l10 5 10-5" />
+                    </svg>
+                    <span class="card-label">Packs périnatalité</span>
+                    <p class="card-desc">Forfaits globaux pour une continuité d'accompagnement</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- ==================== TARIFS À LA CARTE ==================== -->
+        <section id="tarifs-carte">
+            <h3>Tarifs à la carte</h3>
+            <p>Chaque rendez-vous constitue un espace individualisé et rigoureusement préparé en amont. Les règlements s'effectuent en <strong>espèces</strong> ou par <strong>carte bancaire (CB)</strong>. Les paiements par chèque ne sont pas acceptés.</p>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nature de l'accompagnement</th>
+                            <th>Durée de référence</th>
+                            <th>Honoraires</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Hypnose Ericksonienne</strong></td>
+                            <td>1h00</td>
+                            <td>60 €</td>
+                        </tr>
+                        <tr>
+                            <td><strong>EMDR – DSA</strong></td>
+                            <td>1h00</td>
+                            <td>60 €</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Consultation Allaitement</strong></td>
+                            <td>1h00</td>
+                            <td>50 €</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Préparation à l'allaitement (3 séances d'1h)</strong> <span style="font-weight:400; color:var(--text-muted);">(individuel ou collectif)</span></td>
+                            <td>3 x 1h00</td>
+                            <td>135€ / 108€</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Atelier Portage (individuel ou collectif)</strong></td>
+                            <td>1h30</td>
+                            <td>50€ / 40€</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Forfait 3 ateliers Signes (individuel ou collectif)</strong></td>
+                            <td>3 x 1h30</td>
+                            <td>135€ / 108€</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p><strong>Note sur la tarification :</strong> Les tarifs intègrent le temps direct de consultation, le travail d'analyse préparatoire, la supervision, le maintien à niveau des compétences cliniques par la formation continue, ainsi que le coût des charges inhérentes à l'exercice d'une pratique sécurisée en cabinet professionnel.</p>
+
+            <p><em>Prise en charge : De nombreuses mutuelles de santé remboursent totalement ou partiellement les consultations d'hypnose ou d'EMDR. Sensible aux impératifs d'égalité d'accès aux soins, des aménagements d'honoraires peuvent être étudiés pour les personnes traversant des périodes de vulnérabilité financière. Évoquons cette possibilité lors de notre premier contact.</em></p>
+        </section>
+
+        <!-- ==================== LES PACKS PÉRINATALITÉ ==================== -->
+        <section id="packs-perinatalite">
+            <h3>Les packs périnatalité</h3>
+            <p>Des forfaits avantageux pour vous accompagner tout au long de votre projet de naissance et des premiers mois avec bébé. Chaque pack est un ensemble cohérent de prestations, proposé à un tarif unique, que vous choisissiez les options individuelles ou collectives.</p>
+
+            <div class="packs-grid">
+                <!-- Pack Jour J -->
+                <div class="pack-card">
+                    <div class="pack-card-header">
+                        <span class="pack-card-title">Pack "Jour J"</span>
+                        <span class="pack-card-price">220 €</span>
+                    </div>
+                    <p class="pack-card-desc">
+                        <strong>4 séances d'hypnose</strong><br>
+                        Pour se préparer à l'arrivée de bébé. Que l'on souhaite un accouchement physiologique ou non, que l'on sache déjà qu'une césarienne sera nécessaire à la rencontre avec bébé, ou que l'on arrive au terme d'un processus d'adoption, offrez-vous un temps pour créer les meilleures conditions mentales pour accueillir votre enfant. Bébé arrive avant l'heure et vous n'avez pas encore eu vos 4 séances ? Ce n'est pas grave, profitez en pour les transformer en séances post-partum ou allaitement.
+                    </p>
+                </div>
+
+                <!-- Pack Anticiper -->
+                <div class="pack-card">
+                    <div class="pack-card-header">
+                        <span class="pack-card-title">Pack "Anticiper, c'est la clé"</span>
+                        <span class="pack-card-price">250 €</span>
+                    </div>
+                    <p class="pack-card-desc">
+                        <strong>4 séances d'hypnose + 1 atelier portage physiologique</strong><br>
+                        Vous souhaitez vous mettre dans les meilleures conditions pour l'arrivée de bébé et être en capacité de porter bébé dès les premiers instants ? Cette offre est faite pour vous. L'atelier se fera préférentiellement en anté-natal afin de vous donner les moyens de porter bébé avant même la sortie de la maternité.
+                    </p>
+                </div>
+
+                <!-- Pack 100 % physio -->
+                <div class="pack-card">
+                    <div class="pack-card-header">
+                        <span class="pack-card-title">Pack "100 % physio" *</span>
+                        <span class="pack-card-price">360 €</span>
+                    </div>
+                    <p class="pack-card-desc">
+                        <strong>4 séances d'hypnose + 3 séances de préparation à l'allaitement + 1 atelier portage physiologique</strong><br>
+                        Envie d'accouchement physiologique ? D'allaiter aussi simplement que possible ? De porter bébé en toute circonstances ? Choisissez le pack "100 % physio".
+                    </p>
+                    <div class="pack-card-note">
+                        <strong>*</strong> Ce pack s'adapte bien évidemment aux autres types de projets de naissance (césarienne programmée, péridurale, etc.).
+                    </div>
+                </div>
+
+                <!-- Pack Bébé avec la notice -->
+                <div class="pack-card">
+                    <div class="pack-card-header">
+                        <span class="pack-card-title">Pack "Bébé avec la notice"</span>
+                        <span class="pack-card-price">450 €</span>
+                    </div>
+                    <p class="pack-card-desc">
+                        <strong>4 séances d'hypnose + 3 séances de préparation à l'allaitement + 1 atelier portage physiologique + 3 ateliers signes</strong><br>
+                        Vous êtes impatients de goûter pleinement à la nouvelle vie de parent qui vous attend et souhaitez célébrer ce moment unique en vous y plongeant entièrement, ne cherchez plus : cette offre est pour vous. (Offre non contractuelle... Parce qu'on le sait bien, la notice, c'est surtout pour le montage du lit à barreaux… mais avec ce pack, vous aurez toutes les clés pour les premiers mois !)
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== FORMATION ==================== -->
+        <section id="formation">
+            <h3>Formation &amp; Certifications</h3>
+            <p>Je m’engage dans une démarche de formation continue rigoureuse pour vous offrir un accompagnement toujours plus sûr, éthique et adapté à vos besoins. Voici les principales formations suivies :</p>
+
+            <ul class="formation-list">
+                <li>
+                    <strong>DIU Soins Centrés sur Nouveau-Né et sa Famille – soins de développement et allaitement maternel</strong>
+                    <span class="formation-orga">UBO - Université de Bretagne Occidentale, Brest</span>
+                    <span class="formation-date">📅 septembre 2025</span>
+                </li>
+                <li>
+                    <strong>Hypnose Ericksonienne</strong>
+                    <span class="formation-orga">AHTMA Formation, Vannes</span>
+                    <span class="formation-date">📅 Praticienne : décembre 2024 · Maître-praticienne : février 2025</span>
+                </li>
+                <li>
+                    <strong>EMDR-DSA</strong>
+                    <span class="formation-orga">AHTMA Formation, Vannes</span>
+                    <span class="formation-date">📅 Niveau 1 : mars 2025 · Niveau 2(/2) : juin 2025</span>
+                </li>
+                <li>
+                    <strong>Portage physiologique</strong>
+                    <span class="formation-orga">EDBN - L'Ecole Du Bien Naître, Suresnes</span>
+                    <span class="formation-date">📅 mai-juin 2025</span>
+                </li>
+                <li>
+                    <strong>Signes LSF associés à la parole à destination des bambins</strong>
+                    <span class="formation-orga">Éveil et Signes, Angers</span>
+                    <span class="formation-date">📅 mai 2025</span>
+                </li>
+                <li>
+                    <strong>Santé Environnementale</strong>
+                    <span class="formation-orga">FUN MOOC – université de Bordeaux</span>
+                    <span class="formation-date">📅 mars 2025</span>
+                </li>
+                <li>
+                    <strong>Santé Environnementale et 1000 premiers jours</strong>
+                    <span class="formation-orga">CHEM – Collège des Hautes Etudes en Médecine, Brest</span>
+                    <span class="formation-date">📅 novembre 2024</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ==================== PARCOURS & ENGAGEMENT ==================== -->
+        <section id="parcours">
+            <h3>Parcours &amp; engagement professionnel</h3>
+
+            <p>Je suis <strong>Anne-Laure JANNES</strong>, femme et mère de deux enfants. C'est en traversant ma propre expérience de la maternité, confrontée à mes fragilités et mes questions sans réponses, que l'idée de ce cabinet a germé. Je n'ai à l'époque pas trouvé d'espace qui répondait pleinement à mes besoins, ni qui rassemblait en un même endroit toutes les pratiques complémentaires que je souhaitais explorer. Très rapidement j'ai pris conscience de l'extrême vulnérabilité des femmes en post-partum comme de leurs tout-petits. J'ai alors eu le désir de créer un lieu où chaque femme, chaque parent, chaque personne puisse trouver une offre cohérente et interconnectée, sans avoir à multiplier les interlocuteurs. Une seule et même personne pour vous accompagner sur différentes facettes de votre cheminement, afin de préserver la continuité, l'intimité et la qualité de la relation de confiance.</p>
+
+            <p>Portée par des valeurs <strong>humanistes et altruistes</strong>, je souhaite, à mon modeste niveau, contribuer à <strong>atténuer les inégalités</strong> – qu'elles soient de genre, d'orientation sexuelle ou d'identité – en accueillant chacune et chacun dans sa singularité. <em>Au Féminin Pluriel</em> est né de cette ambition : offrir un espace de soin et d'écoute où les diversités sont respectées et où l'on peut se réapproprier son histoire en toute sécurité. <strong>Quelle que soit votre origine, votre histoire, vos idées ou vos besoins, vous serez accueilli·e dans votre authenticité, tel·le que vous êtes.</strong></p>
+
+            <p><strong>Engagement professionnel et cadre déontologique :</strong><br>
+            Le respect du secret professionnel et des règles déontologiques est une boussole qui me guide au quotidien. Ancré en moi, il découle naturellement d'un autre pan de ma vie, celui de soignante, et imprègne chacune de mes pratiques. Les approches complémentaires proposées (hypnose, EMDR, accompagnement périnatal) visent le mieux-être et ne se substituent en aucun cas à une prise en charge médicale classique. Je collabore en parfaite synergie avec le tissu médico-social local (médecins, psychiatres, sages-femmes, psychologues, PMI) afin d'assurer la continuité et la sécurité de votre parcours.</p>
+        </section>
+
+        <!-- ==================== ACCÈS ==================== -->
+        <section id="acces">
+            <h3>Modalités Pratiques &amp; Accessibilité</h3>
+
+            <p><strong>Coordonnées du cabinet :</strong><br>
+            20 avenue Yves Thépot<br>
+            1er étage - coursive Est<br>
+            29000 QUIMPER</p>
+
+            <p><strong>Prendre rendez-vous :</strong><br>
+            📞 Ligne téléphonique : <a href="tel:0636381184" style="color: inherit; text-decoration: none; font-weight: 600;">06 36 38 11 84</a><br>
+            ✉️ Adresse courriel : <a href="mailto:aufemininpluriel29@gmail.com" style="color: var(--accent-primary); text-decoration: none; font-weight: 500;">aufemininpluriel29@gmail.com</a>
+            </p>
+
+            <!-- Se rendre au cabinet -->
+            <div style="margin: 1.5rem 0 0.5rem 0;">
+                <strong style="font-size: 1.1rem; color: var(--text-main);">Se rendre au cabinet</strong>
+            </div>
+
+            <!-- Voiture -->
+            <div class="access-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 10.5h18a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1z" />
+                    <path d="M6.5 10.5L8 7a1 1 0 0 1 1-0.5h6a1 1 0 0 1 1 0.5l1.5 3.5" />
+                    <circle cx="5.5" cy="12" r="1.5" fill="var(--accent-primary)" stroke="none" />
+                    <circle cx="18.5" cy="12" r="1.5" fill="var(--accent-primary)" stroke="none" />
+                    <rect x="4" y="10" width="1" height="0.8" fill="var(--accent-primary)" stroke="none" rx="0.3" />
+                    <rect x="19" y="10" width="1" height="0.8" fill="var(--accent-primary)" stroke="none" rx="0.3" />
+                    <rect x="10.5" y="12" width="3" height="2" rx="0.5" fill="var(--accent-primary)" stroke="none" />
+                    <circle cx="5" cy="15.5" r="2.5" fill="white" stroke="var(--accent-primary)" stroke-width="1.8" />
+                    <circle cx="19" cy="15.5" r="2.5" fill="white" stroke="var(--accent-primary)" stroke-width="1.8" />
+                    <circle cx="5" cy="15.5" r="0.8" fill="var(--accent-primary)" stroke="none" />
+                    <circle cx="19" cy="15.5" r="0.8" fill="var(--accent-primary)" stroke="none" />
+                </svg>
+                <div class="access-text">
+                    <p><strong>En voiture :</strong> Un parking gratuit se trouve au pied de l’immeuble, avec des places réservées <strong>« visiteur 1er étage »</strong>. Vous pouvez stationner en toute tranquillité.</p>
+                </div>
+            </div>
+
+            <!-- Bus -->
+            <div class="access-row">
+                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="6" width="20" height="12" rx="2" />
+                    <path d="M2 11h20" />
+                    <circle cx="6" cy="16" r="2" fill="var(--accent-primary)" stroke="none"/>
+                    <circle cx="18" cy="16" r="2" fill="var(--accent-primary)" stroke="none"/>
+                    <rect x="9" y="8" width="2" height="2" fill="var(--accent-primary)" stroke="none" rx="0.5"/>
+                    <rect x="13" y="8" width="2" height="2" fill="var(--accent-primary)" stroke="none" rx="0.5"/>
+                    <rect x="17" y="8" width="2" height="2" fill="var(--accent-primary)" stroke="none" rx="0.5"/>
+                </svg>
+                <div class="access-text">
+                    <p><strong>En bus :</strong> L’arrêt le plus proche est <strong>Y. Le Guillou</strong>, desservi par la <strong>ligne A</strong>. Le cabinet est à quelques pas.</p>
+                </div>
+            </div>
+
+            <!-- Parenthèse nature -->
+            <div style="margin-top: 1.5rem;">
+                <strong style="font-size: 1.1rem; color: var(--text-main);">Une parenthèse naturelle</strong>
+                <p>Si vous souhaitez prolonger l’apaisement de la séance ou simplement souffler avant de retourner à votre quotidien, le <strong>Vallon Saint-Laurent</strong> se situe juste derrière le cabinet, à seulement 500 mètres à pied. Un véritable écrin de verdure à portée immédiate.</p>
+            </div>
+
+            <div class="box-info highlight" role="note">
+                <strong>Situation de l'accessibilité PMR ♿ :</strong><br>
+                Bien que le bâtiment soit structurellement conçu pour l'accueil des Personnes à Mobilité Réduite, <strong>l'ascenseur est temporairement indisponible suite à une panne technique</strong>.<br>
+                Afin de garantir votre entière accessibilité à mon accompagnement, si le franchissement des escaliers s'avère impossible ou douloureux, je vous invite à m'en informer en amont. Nous mettrons en place des alternatives sur mesure.
+            </div>
+
+            <div class="box-info social" role="note">
+                <strong>📵 Vous cherchez quelque chose ?</strong><br>
+                Au Féminin Pluriel n'est pas sur les réseaux sociaux. N'ayant jamais eu de compte à titre personnel, je ne me sentirais pas légitime à vous demander de vous reconnecter avec votre vraie nature si je ne respectais pas la mienne. Je reste donc fidèle à moi‑même, et cet espace se passera des divers réseaux. Ralentissons :)
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="badge-inclusion">🏳️‍🌈 🏳️‍⚧️ Inclusion &amp; Respect de la Diversité</div>
+        <p>&copy; 2026 Au Féminin Pluriel – Anne-Laure JANNES. Tous droits réservés.</p>
+        <p><a href="#">Mentions Légales</a> | <a href="#">Politique de Confidentialité</a></p>
+        <p style="margin-top: 15px;">Cabinet d'accompagnement thérapeutique et périnatal – Quimper (29000).</p>
+    </footer>
+
+    <!-- ===== JAVASCRIPT : MENU MOBILE ===== -->
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('#nav-menu');
+
+        // Toggle burger
+        menuToggle.addEventListener('click', () => {
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !isExpanded);
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Fermeture du menu principal au clic sur un lien
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
