@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" href="logo_Au-Féminin_Pluriel_transparent.png" type="image/png">
+    <link rel="apple-touch-icon" href="logo_Au-Féminin_Pluriel_transparent.png">
+    
     <title>Au Féminin Pluriel | Accompagnement Émotionnel, Thérapeutique & Périnatal</title>
 
     <!-- Google Fonts -->
@@ -59,13 +64,21 @@
             border: 0;
         }
 
-        /* ===== HEADER ===== */
+        /* ===== HEADER MODIFIÉ ===== */
         header {
             background-color: var(--dark-header);
             color: var(--surface);
-            padding: 6rem 2rem 5rem;
+            padding: 3rem 2rem 4rem; /* padding équilibré */
             text-align: center;
             position: relative;
+        }
+
+        /* Logo centré et agrandi */
+        .logo-header {
+            display: block;
+            max-height: 150px;   /* agrandi */
+            width: auto;
+            margin: 0 auto 1.5rem; /* centré horizontalement + marge basse */
         }
 
         .badge-inclusion {
@@ -115,7 +128,7 @@
             line-height: 1.5;
         }
 
-        /* ===== NAVIGATION (sans dropdown) ===== */
+        /* ===== NAVIGATION ===== */
         nav {
             background-color: var(--surface);
             position: sticky;
@@ -133,6 +146,15 @@
             align-items: center;
             padding: 0 20px;
             position: relative;
+        }
+
+        .logo-nav {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 40px;
+            width: auto;
         }
 
         .menu-toggle {
@@ -403,7 +425,6 @@
             border-left: 2px solid var(--accent-primary);
         }
 
-        /* ===== NOUVEAU STYLE POUR LES PACKS ===== */
         .packs-grid {
             display: flex;
             flex-direction: column;
@@ -501,7 +522,6 @@
             }
         }
 
-        /* ===== NOUVEAUX STYLES POUR LES GRILLES DE RECUADROS ===== */
         .grid-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -575,12 +595,10 @@
             border-bottom-color: var(--accent-primary);
         }
 
-        /* pour la section tarifs (2 cartes) */
         .grid-cards.two-cols {
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
         }
 
-        /* ===== FORMATION ===== */
         .formation-list {
             list-style: none;
             padding: 0;
@@ -656,7 +674,13 @@
             margin-bottom: 0.75rem;
         }
 
-        /* ===== ACCESSIBILITÉ : ICONES ===== */
+        .logo-footer {
+            height: 40px;
+            width: auto;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
         .access-row {
             display: flex;
             align-items: flex-start;
@@ -689,7 +713,7 @@
         /* ===== RESPONSIVE ===== */
         @media (max-width: 900px) {
             header {
-                padding: 4rem 1.5rem 3.5rem;
+                padding: 2rem 1.5rem 3rem;
             }
             header h1 {
                 font-size: 2.6rem;
@@ -700,12 +724,26 @@
             section {
                 padding: 2.5rem 2rem;
             }
+            .logo-header {
+                max-height: 120px;
+            }
         }
 
         @media (max-width: 768px) {
+            header {
+                padding: 2rem 1.5rem 2.5rem;
+            }
+            .logo-header {
+                max-height: 100px;
+            }
+
             .menu-toggle {
                 display: block;
-                margin-left: auto;
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+                padding: 12px;
             }
 
             .nav-container {
@@ -754,6 +792,11 @@
                 transform: rotate(-45deg) translate(5px, -6px);
             }
 
+            .logo-nav {
+                left: 16px;
+                height: 32px;
+            }
+
             section {
                 padding: 2rem 1.5rem;
             }
@@ -782,15 +825,19 @@
     <a href="#contenu-principal" class="sr-only">Passer au contenu principal</a>
 
     <header>
+        <!-- Logo centré et agrandi -->
+        <img class="logo-header" src="logo_Au-Féminin_Pluriel_transparent.png" alt="Logo Au Féminin Pluriel">
         <h1>Au Féminin Pluriel</h1>
-        <h2>Accompagnement Émotionnel, Thérapeutique &amp; Périnatal</h2>
+        <h2>Un cabinet singulièrement pluriel</h2>
         <div class="quote-container">
-            <p class="quote">"Un espace serein et sécurisant dédié au cheminement des femmes, des minorités sexuelles et de genre et de toute personne en quête de reconnexion intérieure."</p>
+            <p class="quote">"Un espace, plusieurs ressources, une confiance. Allons à l'essentiel."</p>
         </div>
     </header>
 
     <nav aria-label="Menu principal">
         <div class="nav-container">
+            <!-- Logo dans la navigation -->
+            <img class="logo-nav" src="logo_Au-Féminin_Pluriel_transparent.png" alt="Logo Au Féminin Pluriel">
             <button class="menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Ouvrir le menu">
                 <span></span>
                 <span></span>
@@ -800,8 +847,8 @@
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#specialites">Spécialités</a></li>
                 <li><a href="#tarifs">Tarifs</a></li>
-                <li><a href="#formation">Formation</a></li>
-                <li><a href="#parcours">Parcours &amp; engagement</a></li>
+                <li><a href="#formation">Mes formations</a></li>
+                <li><a href="#parcours">À propos</a></li>
                 <li><a href="#acces">Infos &amp; Accessibilité</a></li>
             </ul>
         </div>
@@ -812,19 +859,20 @@
         <!-- ==================== ACCUEIL ==================== -->
         <section id="accueil">
             <h3>Vous êtes au bon endroit…</h3>
-            <p><strong>Au Féminin Pluriel</strong> est un cabinet d’accompagnement émotionnel, thérapeutique et périnatal pensé comme une parenthèse douce et bienveillante. Ici, chaque parcours est accueilli dans sa singularité, sans jugement, avec une attention particulière pour les femmes, les minorités sexuelles et de genre et toute personne désireuse d’explorer ses ressources intérieures.</p>
-            <p>Que vous traversiez une période de transition, un questionnement identitaire, une préparation à la naissance ou un besoin d’apaiser des mémoires douloureuses, vous trouverez un espace d’écoute profonde et de sécurité. L’approche proposée est globale, respectueuse de votre rythme et de votre histoire.</p>
+            <p>Chez <strong>Au Féminin Pluriel</strong>, le nom n'est pas un hasard : c'est une véritable règle de grammaire intérieure. Ici, on refuse de conjuguer votre souffrance ou votre parentalité au singulier. On les <strong>accorde au pluriel</strong> : pluriel des outils (hypnose, EMDR-DSA, périnatalité), pluriel des âges de la vie (deuil, naissance, traumatisme), et pluriel des identités. Résultat ? <strong>Vous ne multipliez pas les interlocuteurs, vous multipliez les ressources en un seul lieu.</strong> Parce qu'un parent, une femme, un être humain, ça ne se résume jamais à un seul rôle.</p>
+
+            <p>Que vous traversiez une période de transition, un questionnement identitaire, une préparation à la naissance ou un besoin d'apaiser des mémoires douloureuses, vous trouverez un espace d'écoute profonde et de sécurité. L'approche proposée est <strong>globale, respectueuse de votre rythme et de votre histoire</strong>.</p>
             <p>Je vous invite à prendre le temps de découvrir les différentes offres ci-dessous. Prenez soin de vous.</p>
 
             <h4>Et les hommes alors ?</h4>
-            <p>Parce que la sensibilité, l'écoute de soi et la vulnérabilité ne connaissent pas de frontières de genre, nous portons toutes et tous une part de féminité en soi. Messieurs, l'espace <em>Au Féminin Pluriel</em> s'adresse également à vous si vous vous reconnaissez dans cette approche globale, introspective et douce du soin.</p>
-            <p>Que ce soit pour traverser une transition de vie, travailler sur une mémoire traumatique ou explorer vos émotions en profondeur, vous êtes pleinement les bienvenus.</p>
-            <p>Si, toutefois, l'énergie ou le cadre de ce cabinet ne correspondaient pas à vos attentes ou à vos besoins spécifiques, un·e autre professionnel·le de l'accompagnement ou de la santé sera sans doute plus indiqué·e pour votre prise en charge, et je me ferai un devoir de vous orienter au mieux.</p>
+            <p>Parce que la sensibilité, l'écoute de soi et la vulnérabilité ne connaissent pas de frontières de genre, nous portons toutes et tous une part de féminité en soi. Messieurs, l'espace <em>Au Féminin Pluriel</em> s'adresse également à vous si vous vous reconnaissez dans cette approche globale et introspective du soin.</p>
+            <p>Que ce soit pour traverser une transition de vie, travailler sur une mémoire traumatique, explorer vos émotions en profondeur ou pour toute autre problématique, <strong>vous êtes pleinement les bienvenus</strong>.</p>
+            <p>Si, toutefois, vous ne vous reconnaissez pas dans l'énergie ou le cadre de ce cabinet, un·e autre professionnel·le de l'accompagnement ou de la santé sera sans doute plus indiqué·e pour votre prise en charge, et je me ferai un devoir de vous orienter au mieux.</p>
         </section>
 
         <!-- ==================== SPÉCIALITÉS (GRILLE DE RECUADROS) ==================== -->
         <section id="specialites">
-            <h3>Nos Spécialités</h3>
+            <h3>Nos spécialités</h3>
             <p>Chaque accompagnement est unique. Choisissez la pratique qui résonne avec vos besoins, ou combinez-les pour un parcours sur mesure.</p>
 
             <div class="grid-cards">
@@ -884,8 +932,8 @@
 
         <!-- ==================== DÉTAILS DES ACCOMPAGNEMENTS ==================== -->
         <section id="accompagnements">
-            <h3>Mes Accompagnements</h3>
-            <!-- (les blocs détaillés restent inchangés) -->
+            <h3>Mes accompagnements</h3>
+
             <!-- Hypnose -->
             <div class="service-block" id="hypnose">
                 <h4 class="service-title">
@@ -896,13 +944,19 @@
                     </svg>
                     Hypnose Ericksonienne
                 </h4>
-                <p>L’hypnose ericksonienne active un état de conscience modifié naturel qui facilite l'accès à vos ressources intérieures inconscientes. Loin des clichés, vous conservez votre libre arbitre à chaque instant. Ce processus s'avère précieux pour lever des blocages émotionnels, appréhender sereinement la naissance, apaiser les états d'anxiété, ou encore soutenir un sevrage tabagique ou d'autres dépendances (alcool, substances, etc.).</p>
+                <p>L'hypnose ericksonienne active un état de conscience modifié naturel qui facilite l'accès à vos ressources intérieures inconscientes. Loin des clichés, <strong>vous conservez votre libre arbitre</strong> à chaque instant. Ce processus s'avère précieux pour lever des blocages émotionnels, appréhender sereinement la naissance, apaiser les états d'anxiété, ou encore soutenir un sevrage tabagique ou d'autres dépendances (alcool, substances, etc.).</p>
                 <p><em>Nous progressons au rythme de vos besoins, dans un cadre éthique rigoureusement sécurisé.</em></p>
+
+                <div style="margin: 1.5rem 0 1rem 0;">
+                    <strong style="font-size: 1.1rem; color: var(--text-main);">L'hypnose, ésotérique ?</strong>
+                    <p>Oui et non.</p>
+                    <p>L'hypnose peut revêtir un côté onirique, fantaisiste diront certains, cependant son intérêt s'est confirmé sur bien des sujets. Cette pratique est d'une telle efficacité qu'elle s'est imposée dans les hôpitaux et permet à nombre de patients de se passer d'anesthésie lors d'interventions légères, leur évitant ainsi les effets indésirables, parfois lourds, des produits anesthésiques. Cependant, on ne doit ni le nier, ni le minimiser, <strong>des dérives existent</strong>. Bien que vous soyez à tout moment maître de vous-même lors de vos séances, <strong>une baisse de votre vigilance est bien induite</strong>, c'est pourquoi il est indispensable de le faire auprès d'un praticien de confiance.</p>
+                </div>
 
                 <div class="box-info warning" role="note">
                     <strong>Précision importante :</strong>
-                    <p style="margin-top: 0.5rem;">Bien que s'inscrivant dans la catégorie des thérapies brèves, l'évolution psychologique demeure propre à chacun·e. Le nombre total de séances ne peut être défini à l'avance et un suivi régulier sur plusieurs mois est fréquemment requis pour ancrer des résultats pérennes.</p>
-                    <p style="margin-top: 0.5rem;"><strong>Déroulement de la première séance :</strong> Le premier rendez-vous est entièrement dédié à une prise de contact approfondie. Ce temps d’anamnèse me permet de recueillir un maximum d’informations sur votre histoire, votre environnement et votre problématique. Grâce à cela, je peux affiner ma connaissance de votre singularité et construire, pour les séances suivantes, un accompagnement parfaitement individualisé et adapté à vos besoins spécifiques.</p>
+                    <p style="margin-top: 0.5rem;">Bien que s'inscrivant dans la catégorie des thérapies brèves, <strong>le rythme et les résultats demeurent propres à chacun·e</strong>. Le nombre total de séances ne peut être défini à l'avance et un suivi régulier sur plusieurs mois est fréquemment requis pour ancrer des résultats pérennes.</p>
+                    <p style="margin-top: 0.5rem;"><strong>Déroulement de la première séance :</strong> Le premier rendez-vous est entièrement dédié à une prise de contact approfondie. Ce temps d'anamnèse me permet de recueillir un maximum d'informations sur votre histoire, votre environnement et votre problématique. Grâce à cela, je peux affiner ma connaissance de votre singularité et construire, pour les séances suivantes, <strong>un accompagnement parfaitement individualisé et adapté</strong> à vos besoins spécifiques.</p>
                 </div>
             </div>
 
@@ -914,14 +968,18 @@
                         <circle cx="12" cy="12" r="3" />
                         <circle cx="12" cy="12" r="1.5" fill="currentColor" />
                     </svg>
-                    EMDR – DSA (Désensibilisation par Stimulations Alternées)
+                    L'EMDR-DSA
                 </h4>
-                <p>L'EMDR-DSA est une approche thérapeutique validée scientifiquement pour le traitement des traumatismes (événements de vie douloureux, violences, parcours obstétricaux complexes, deuils). Par le biais de stimulations bilatérales alternées (visuelles ou tactiles), le cerveau est accompagné dans la métabolisation des mémoires traumatiques, atténuant ainsi la charge émotionnelle associée au présent.</p>
+                <div style="margin: 1.5rem 0 1rem 0;">
+                    <strong style="font-size: 1.1rem; color: var(--text-main);">Késako ?</strong>
+                    <p>Eye Movement Desensitization and Reprocessing – Désensibilisation par Stimulations Alternées.</p>
+                    <p>Derrière ces sigles se cache <strong>une méthode scientifiquement éprouvée</strong> permettant l'assimilation des éléments traumatiques. Par le biais de stimulations bilatérales alternées (visuelles ou tactiles), le cerveau est accompagné dans la métabolisation des mémoires traumatiques, <strong>atténuant ainsi la charge émotionnelle</strong> associée au présent.</p>
+                </div>
 
                 <div class="box-info warning" role="note">
                     <strong>Précision importante :</strong>
-                    <p style="margin-top: 0.5rem;">Bien que s'inscrivant dans la catégorie des thérapies brèves, l'évolution psychologique demeure propre à chacun·e. Le nombre total de séances ne peut être défini à l'avance et un suivi régulier sur plusieurs mois est fréquemment requis pour ancrer des résultats pérennes.</p>
-                    <p style="margin-top: 0.5rem;"><strong>Déroulement de la première séance :</strong> Le premier rendez-vous est entièrement dédié à une prise de contact approfondie. Ce temps d’anamnèse me permet de recueillir un maximum d’informations sur votre histoire, votre environnement et votre problématique. Grâce à cela, je peux affiner ma connaissance de votre singularité et construire, pour les séances suivantes, un accompagnement parfaitement individualisé et adapté à vos besoins spécifiques.</p>
+                    <p style="margin-top: 0.5rem;">Bien que s'inscrivant dans la catégorie des thérapies brèves, <strong>le rythme et les résultats demeurent propres à chacun·e</strong>. Le nombre total de séances ne peut être défini à l'avance et un suivi régulier sur plusieurs mois est fréquemment requis pour ancrer des résultats pérennes.</p>
+                    <p style="margin-top: 0.5rem;"><strong>Déroulement de la première séance :</strong> Le premier rendez-vous est entièrement dédié à une prise de contact approfondie. Ce temps d'anamnèse me permet de recueillir un maximum d'informations sur votre histoire, votre environnement et votre problématique. Grâce à cela, je peux affiner ma connaissance de votre singularité et construire, pour les séances suivantes, <strong>un accompagnement parfaitement individualisé et adapté</strong> à vos besoins spécifiques.</p>
                 </div>
             </div>
 
@@ -934,9 +992,16 @@
                     </svg>
                     Allaitement maternel
                 </h4>
-                <p>L'allaitement se prépare et s'accompagne de manière individualisée. Je vous apporte un étayage technique et émotionnel pour soutenir votre choix, répondre à vos interrogations légitimes et surmonter d'éventuelles difficultés.</p>
+
+                <div style="margin: 1.5rem 0 1rem 0;">
+                    <strong style="font-size: 1.1rem; color: var(--text-main);">Pourquoi suivre une préparation à l'allaitement ?</strong>
+                    <p>« L'allaitement c'est naturel, c'est inné, c'est instinctif. »</p>
+                    <p><strong>FAUX</strong> – Si l'allaitement est bien naturel, <strong>il n'est en rien inné</strong> et notre instinct animal ne suffit pas, si tant est qu'on l'ait encore présent en soi.</p>
+                    <p>L'allaitement maternel et sa pratique fluide et spontanée a au contraire un aspect culturel et sociétal. Les taux d'allaitement maternel ont largement chuté en France au cours des années 70. Ce savoir s'est progressivement perdu. Si aujourd'hui l'allaitement maternel exclusif est majoritaire à la naissance, on sait qu'il ne dure pas une fois de retour au domicile. Les repères n'étant pas les mêmes entre l'allaitement maternel et ses substituts, les conseils non sollicités et mal avisés sont légion et peuvent mettre à mal votre confiance en vous, voire votre lactation elle-même car, non, un bébé ne doit pas voir ses tétées espacées de [X] heures ni disparaître la nuit. Mais, oui, <strong>l'allaitement maternel exclusif garde un intérêt majeur pour bébé, même après 2 mois</strong>. Pour déconstruire les préjugés, obtenir des notions solides et fiables, préparer votre reprise professionnelle, faisons le point ensemble lors de nos cours de préparation à l'allaitement maternel à Quimper.</p>
+                </div>
+
                 <ul class="list-unstyled">
-                    <li><strong>Cours de préparation à l'allaitement maternel :</strong> 3 séances d’1h pour intégrer la physiologie de la lactation, appréhender les postures optimales, comprendre les rythmes du nouveau-né et prévenir les inconforts afin d'initier votre allaitement sereinement.</li>
+                    <li><strong>Cours de préparation à l'allaitement maternel :</strong> 3 séances d'1h pour intégrer la physiologie de la lactation, appréhender les postures optimales, comprendre les rythmes du nouveau-né et prévenir les inconforts afin d'initier votre allaitement sereinement.</li>
                 </ul>
             </div>
 
@@ -951,10 +1016,23 @@
                         <circle cx="12" cy="15" r="1.5" fill="var(--accent-primary)" stroke="none"/>
                         <path d="M10 17h4v2h-4z" fill="var(--accent-primary)" stroke="none"/>
                     </svg>
-                    Ateliers de Portage Physiologique
+                    Le portage physiologique
                 </h4>
-                <p>Le portage constitue un prolongement naturel de la vie intra-utérine, garantissant la sécurité affective du nourrisson. Au cours de ces séances, je vous transmets les règles d'or de sécurité et les techniques d’ajustement des nouages, préservant ainsi votre posture et le développement moteur de votre enfant.</p>
-                <p>Des <strong>ateliers collectifs</strong> sont également proposés pour échanger et expérimenter en petit groupe (4 à 6 familles) – un moment convivial et instructif.</p>
+
+                <div style="margin: 1.5rem 0 1rem 0;">
+                    <strong style="font-size: 1.1rem; color: var(--text-main);">« Un effet de mode ! »</strong>
+                    <p>Peut-être ?? J'avoue ne pas être portée sur le sujet de la mode et ne pas suivre les tendances « insta » et autres mais je vois bien que certaines influenceuses (car il ne s'agit toujours que de femmes sur le domaine du portage, étrangement) jouent habilement avec les écharpes. Tant mieux.</p>
+                    <p><strong>Pourquoi porter ?</strong></p>
+                    <p>Le portage physiologique a <strong>des bénéfices étudiés et démontrés</strong> sur le bien-être de bébé comme du parent porteur. En effet, il est propice au bon développement physique et affectif de l'enfant et favorise également le développement du lien d'attachement entre bébé et son porteur. C'est donc loin d'être accessoire. Parent, grand-parent, professionnel de la petite enfance, venez à la découverte de cet outil ancestral dans votre espace dédié à Quimper ! Je vous propose des instants de découverte du portage et ses différents moyens (écharpes, sling, mei-taï, etc.) ainsi que des ateliers de portage physiologique une fois votre choix fait. Au cours de ces séances, je vous transmets <strong>les règles d'or de sécurité</strong> et les techniques d'ajustement des nouages, préservant ainsi votre posture et le développement moteur de votre enfant.</p>
+                    <p><strong>Quand porter ?</strong></p>
+                    <p>Dès la naissance, profitez du peau à peau avec votre bébé. Le portage peut être utilisé partout, tout le temps ou presque... Tout terrain, il est de toutes vos sorties. Apaisant, il est votre meilleur allié pour le sommeil de bébé, un vrai somnifère ! Berçant, il vous aide à calmer pleurs et reflux.</p>
+                    <p><strong>Relation entre portage et allaitement</strong></p>
+                    <p>Baladez-vous tout en allaitant. Découvrez nos propositions en <a href="#allaitement" style="color: var(--accent-primary); font-weight: 500; text-decoration: none;">soutien à l'allaitement maternel</a> sur Quimper.</p>
+                </div>
+
+                <ul class="list-unstyled">
+                    <li><strong>Ateliers de portage physiologique :</strong> Des <strong>ateliers collectifs</strong> sont également proposés pour échanger et expérimenter en petit groupe (4 à 6 familles) – un moment convivial et instructif.</li>
+                </ul>
             </div>
 
             <!-- Signes -->
@@ -964,10 +1042,16 @@
                         <path d="M7 11v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1h-3l1-4a1 1 0 0 0-1-1h-1a1 1 0 0 0-1 1l-2 5H7a1 1 0 0 0-1 1z"/>
                         <path d="M7 11h-2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2"/>
                     </svg>
-                    Atelier Signes associés à la parole
+                    Signes associés à la parole
                 </h4>
-                <p>Bien avant l'accès à la parole, l'enfant manifeste une intention de communiquer. L'utilisation d'outils gestuels réduit les frustrations mutuelles, enrichit la création du lien et offre un aperçu privilégié du monde cognitif de votre bébé.</p>
-                <p>Cet atelier se décline en un <strong>module de 3 séances</strong> abordant successivement :</p>
+                <p>Bien avant l'accès à la parole, l'enfant manifeste une intention de communiquer. Par ses gestes, la modulation de sa voix, il vous transmet ce qu'il peut sur ses émotions, ses besoins. Étoffez ses possibilités à communiquer avec son environnement et participez à nos ateliers de signes associés à la parole sur Quimper.</p>
+
+                <div style="margin: 1.5rem 0 1rem 0;">
+                    <strong style="font-size: 1.1rem; color: var(--text-main);">Mais pourquoi pleure-t-il ?!</strong>
+                    <p>L'utilisation d'outils gestuels <strong>réduit les frustrations mutuelles</strong>, enrichit la création du lien et offre un aperçu privilégié du monde cognitif de votre bébé.</p>
+                </div>
+
+                <p>Ce module se décline 3 ateliers abordant successivement :</p>
                 <ul class="list-unstyled">
                     <li><strong>Les besoins fondamentaux</strong> (repas, sommeil, hygiène, etc.)</li>
                     <li><strong>Les émotions</strong> (joie, colère, peur, surprise, etc.)</li>
@@ -982,7 +1066,7 @@
 
         <!-- ==================== TARIFS (GRILLE DE RECUADROS) ==================== -->
         <section id="tarifs">
-            <h3>Nos Tarifs</h3>
+            <h3>Nos tarifs</h3>
             <p>Deux volets pour vous guider : consultez les prestations à l'unité ou optez pour un forfait global. Chaque formule est pensée pour s'adapter à votre projet.</p>
 
             <div class="grid-cards two-cols">
@@ -1074,7 +1158,7 @@
                     </div>
                     <p class="pack-card-desc">
                         <strong>4 séances d'hypnose</strong><br>
-                        Pour se préparer à l'arrivée de bébé. Que l'on souhaite un accouchement physiologique ou non, que l'on sache déjà qu'une césarienne sera nécessaire à la rencontre avec bébé, ou que l'on arrive au terme d'un processus d'adoption, offrez-vous un temps pour créer les meilleures conditions mentales pour accueillir votre enfant. Bébé arrive avant l'heure et vous n'avez pas encore eu vos 4 séances ? Ce n'est pas grave, profitez en pour les transformer en séances post-partum ou allaitement.
+                        Pour se préparer à l'arrivée de bébé. Que l'on souhaite un accouchement physiologique ou non, que l'on sache déjà qu'une césarienne sera nécessaire à la rencontre avec bébé, ou que l'on arrive au terme d'un processus d'adoption, offrez-vous un temps pour créer les meilleures conditions mentales pour accueillir votre enfant. Bébé arrive avant l'heure et vous n'avez pas encore eu vos 4 séances ? Ce n'est pas grave, profitez-en pour les transformer en séances post-partum ou allaitement.
                     </p>
                 </div>
 
@@ -1098,7 +1182,7 @@
                     </div>
                     <p class="pack-card-desc">
                         <strong>4 séances d'hypnose + 3 séances de préparation à l'allaitement + 1 atelier portage physiologique</strong><br>
-                        Envie d'accouchement physiologique ? D'allaiter aussi simplement que possible ? De porter bébé en toute circonstances ? Choisissez le pack "100 % physio".
+                        Envie d'accouchement physiologique ? D'allaiter aussi simplement que possible ? De porter bébé en toutes circonstances ? Choisissez le pack "100 % physio".
                     </p>
                     <div class="pack-card-note">
                         <strong>*</strong> Ce pack s'adapte bien évidemment aux autres types de projets de naissance (césarienne programmée, péridurale, etc.).
@@ -1119,10 +1203,10 @@
             </div>
         </section>
 
-        <!-- ==================== FORMATION ==================== -->
+        <!-- ==================== MES FORMATIONS ==================== -->
         <section id="formation">
-            <h3>Formation &amp; Certifications</h3>
-            <p>Je m’engage dans une démarche de formation continue rigoureuse pour vous offrir un accompagnement toujours plus sûr, éthique et adapté à vos besoins. Voici les principales formations suivies :</p>
+            <h3>Mes formations</h3>
+            <p>Je m'engage dans une démarche de formation continue rigoureuse pour vous offrir un accompagnement toujours plus sûr, éthique et adapté à vos besoins. Voici les principales formations suivies :</p>
 
             <ul class="formation-list">
                 <li>
@@ -1163,16 +1247,18 @@
             </ul>
         </section>
 
-        <!-- ==================== PARCOURS & ENGAGEMENT ==================== -->
+        <!-- ==================== À PROPOS (anciennement Parcours & engagement) ==================== -->
         <section id="parcours">
-            <h3>Parcours &amp; engagement professionnel</h3>
+            <h3>À propos</h3>
 
-            <p>Je suis <strong>Anne-Laure JANNES</strong>, femme et mère de deux enfants. C'est en traversant ma propre expérience de la maternité, confrontée à mes fragilités et mes questions sans réponses, que l'idée de ce cabinet a germé. Je n'ai à l'époque pas trouvé d'espace qui répondait pleinement à mes besoins, ni qui rassemblait en un même endroit toutes les pratiques complémentaires que je souhaitais explorer. Très rapidement j'ai pris conscience de l'extrême vulnérabilité des femmes en post-partum comme de leurs tout-petits. J'ai alors eu le désir de créer un lieu où chaque femme, chaque parent, chaque personne puisse trouver une offre cohérente et interconnectée, sans avoir à multiplier les interlocuteurs. Une seule et même personne pour vous accompagner sur différentes facettes de votre cheminement, afin de préserver la continuité, l'intimité et la qualité de la relation de confiance.</p>
+            <p>Je suis <strong>Anne-Laure JANNES</strong>, fondatrice d'Au Féminin Pluriel, votre cabinet d'hypnose ericksonienne, pour accompagner tout un chacun à cheminer au cours de certaines étapes de la vie (deuil, sevrage, conflit intérieur, sommeil, anxiété, accouchement physiologique, baby blues, etc.) et d'EMDR-DSA, outils précieux lorsque l'on se trouve confronté à un traumatisme quelle que soit la nature (accident, VSS, accouchement traumatique, etc.), avec en son ADN <strong>une composante humaniste et féministe forte</strong>. De ce fait, ma pratique vise notamment à atténuer les inégalités femmes-hommes et par extension les inégalités touchant toutes les minorités qu'elles soient de sexe, de genre ou autre.</p>
 
-            <p>Portée par des valeurs <strong>humanistes et altruistes</strong>, je souhaite, à mon modeste niveau, contribuer à <strong>atténuer les inégalités</strong> – qu'elles soient de genre, d'orientation sexuelle ou d'identité – en accueillant chacune et chacun dans sa singularité. <em>Au Féminin Pluriel</em> est né de cette ambition : offrir un espace de soin et d'écoute où les diversités sont respectées et où l'on peut se réapproprier son histoire en toute sécurité. <strong>Quelle que soit votre origine, votre histoire, vos idées ou vos besoins, vous serez accueilli·e dans votre authenticité, tel·le que vous êtes.</strong></p>
+            <p>Lors de la découverte de ma propre maternité, j'ai pris conscience de l'extrême vulnérabilité et de l'isolement dans lesquels se trouvent les jeunes parents et plus particulièrement les femmes en post-partum. C'est pourquoi je me suis passionnée puis formée à diverses pratiques autour de la périnatalité (portage physiologique, signes associés à la parole, etc.), chacun de ces outils étant autant de clés concrètes vers une parentalité apaisée. L'allaitement maternel constitue un pan important d'Au Féminin Pluriel. Au cœur d'une société ne sachant plus allaiter et dont le taux de natalité n'a de cesse de baisser, les femmes mères allaitantes constituent une réelle minorité dans la minorité. Une place de choix leur est donc tout naturellement dédiée au sein du cabinet.</p>
+
+            <p><strong>Au Féminin Pluriel</strong> rassemble des ressources de plusieurs natures mais interconnectées, vous évitant de devoir multiplier les interlocuteurs, ce qui est précieux quand on a peu de temps à s'accorder à soi-même ou que l'on est un jeune parent fatigué et fragile. Cela vous permet de préserver la continuité de votre parcours, votre intimité et la qualité de la relation de confiance. <strong>Quelle que soit votre origine, votre histoire, vos idées ou vos besoins, vous serez accueilli·e dans votre authenticité, tel·le que vous êtes.</strong></p>
 
             <p><strong>Engagement professionnel et cadre déontologique :</strong><br>
-            Le respect du secret professionnel et des règles déontologiques est une boussole qui me guide au quotidien. Ancré en moi, il découle naturellement d'un autre pan de ma vie, celui de soignante, et imprègne chacune de mes pratiques. Les approches complémentaires proposées (hypnose, EMDR, accompagnement périnatal) visent le mieux-être et ne se substituent en aucun cas à une prise en charge médicale classique. Je collabore en parfaite synergie avec le tissu médico-social local (médecins, psychiatres, sages-femmes, psychologues, PMI) afin d'assurer la continuité et la sécurité de votre parcours.</p>
+            Le respect du secret professionnel et des règles déontologiques est une boussole qui me guide au quotidien. Ancré en moi, il découle naturellement d'un autre pan de ma vie, celui de soignante, et imprègne chacune de mes pratiques. Les approches complémentaires proposées (hypnose, EMDR, accompagnement périnatal) visent le mieux-être et <strong>ne se substituent en aucun cas à une prise en charge médicale classique</strong>. Je collabore en parfaite synergie avec le tissu médico-social local (médecins, psychiatres, sages-femmes, psychologues, PMI) afin d'assurer la continuité et la sécurité de votre parcours.</p>
         </section>
 
         <!-- ==================== ACCÈS ==================== -->
@@ -1210,7 +1296,7 @@
                     <circle cx="19" cy="15.5" r="0.8" fill="var(--accent-primary)" stroke="none" />
                 </svg>
                 <div class="access-text">
-                    <p><strong>En voiture :</strong> Un parking gratuit se trouve au pied de l’immeuble, avec des places réservées <strong>« visiteur 1er étage »</strong>. Vous pouvez stationner en toute tranquillité.</p>
+                    <p><strong>En voiture :</strong> Un parking gratuit se trouve au pied de l'immeuble, avec des places réservées <strong>« visiteur 1er étage »</strong>. Vous pouvez stationner en toute tranquillité.</p>
                 </div>
             </div>
 
@@ -1226,19 +1312,19 @@
                     <rect x="17" y="8" width="2" height="2" fill="var(--accent-primary)" stroke="none" rx="0.5"/>
                 </svg>
                 <div class="access-text">
-                    <p><strong>En bus :</strong> L’arrêt le plus proche est <strong>Y. Le Guillou</strong>, desservi par la <strong>ligne A</strong>. Le cabinet est à quelques pas.</p>
+                    <p><strong>En bus :</strong> L'arrêt le plus proche est <strong>Y. Le Guillou</strong>, desservi par la <strong>ligne A</strong>. Le cabinet est à quelques pas.</p>
                 </div>
             </div>
 
             <!-- Parenthèse nature -->
             <div style="margin-top: 1.5rem;">
                 <strong style="font-size: 1.1rem; color: var(--text-main);">Une parenthèse naturelle</strong>
-                <p>Si vous souhaitez prolonger l’apaisement de la séance ou simplement souffler avant de retourner à votre quotidien, le <strong>Vallon Saint-Laurent</strong> se situe juste derrière le cabinet, à seulement 500 mètres à pied. Un véritable écrin de verdure à portée immédiate.</p>
+                <p>Si vous souhaitez prolonger l'apaisement de la séance ou simplement souffler avant de retourner à votre quotidien, le <strong>Vallon Saint-Laurent</strong> se situe juste derrière le cabinet, à seulement 500 mètres à pied. Un véritable écrin de verdure à portée immédiate.</p>
             </div>
 
             <div class="box-info highlight" role="note">
                 <strong>Situation de l'accessibilité PMR ♿ :</strong><br>
-                Bien que le bâtiment soit structurellement conçu pour l'accueil des Personnes à Mobilité Réduite, <strong>l'ascenseur est temporairement indisponible suite à une panne technique</strong>.<br>
+                Bien que le bâtiment soit structurellement conçu pour l'accueil des Personnes à Mobilité Réduite, <strong>l'ascenseur est temporairement indisponible</strong> suite à une panne technique.<br>
                 Afin de garantir votre entière accessibilité à mon accompagnement, si le franchissement des escaliers s'avère impossible ou douloureux, je vous invite à m'en informer en amont. Nous mettrons en place des alternatives sur mesure.
             </div>
 
@@ -1253,6 +1339,8 @@
 
     <footer>
         <div class="badge-inclusion">🏳️‍🌈 🏳️‍⚧️ Inclusion &amp; Respect de la Diversité</div>
+        <!-- Logo dans le pied de page -->
+        <img class="logo-footer" src="logo_Au-Féminin_Pluriel_transparent.png" alt="Logo Au Féminin Pluriel">
         <p>&copy; 2026 Au Féminin Pluriel – Anne-Laure JANNES. Tous droits réservés.</p>
         <p><a href="#">Mentions Légales</a> | <a href="#">Politique de Confidentialité</a></p>
         <p style="margin-top: 15px;">Cabinet d'accompagnement thérapeutique et périnatal – Quimper (29000).</p>
