@@ -46,7 +46,9 @@
         "addressCountry": "FR"
       },
       "sameAs": [
-        "https://aufemininpluriel.fr/"
+        "https://aufemininpluriel.fr/",
+        "https://www.facebook.com/profile.php?id=61594111085775",
+        "https://www.instagram.com/au.feminin.pluriel/"
       ]
     }
     </script>
@@ -683,6 +685,178 @@
             font-weight: 400;
         }
 
+        /* ===== ATELIERS GRATUITS ===== */
+        .ateliers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 2.5rem 0;
+        }
+
+        .atelier-card {
+            background: linear-gradient(135deg, #fdfbfe 0%, #f8f6f9 100%);
+            border-radius: var(--radius-lg);
+            padding: 2.25rem 2rem;
+            border: 1px solid rgba(123, 79, 128, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .atelier-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-dark));
+        }
+
+        .atelier-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .atelier-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--accent-primary);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 5px 14px;
+            border-radius: 30px;
+            align-self: flex-start;
+        }
+
+        .atelier-card h4 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent-dark);
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .atelier-subtitle {
+            font-style: italic;
+            color: var(--accent-primary);
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .atelier-card p {
+            margin: 0;
+            font-size: 0.98rem;
+        }
+
+        .atelier-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--surface);
+            padding: 12px 16px;
+            border-radius: var(--radius-md);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-top: 0.5rem;
+        }
+
+        .atelier-meta svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--accent-primary);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+        }
+
+        .atelier-dates {
+            background: var(--surface);
+            border-radius: var(--radius-md);
+            padding: 1rem 1.25rem;
+            margin-top: 0.5rem;
+        }
+
+        .atelier-dates strong {
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--accent-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .atelier-dates ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .atelier-dates li {
+            background: var(--accent-light);
+            color: var(--accent-dark);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* ===== RÉSEAUX SOCIAUX ===== */
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            color: white;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .social-link.facebook {
+            background: #1877f2;
+        }
+
+        .social-link.instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .social-link svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+            flex-shrink: 0;
+        }
+
         /* ===== FOOTER ===== */
         footer {
             background-color: var(--dark-header);
@@ -721,6 +895,37 @@
             width: auto;
             display: block;
             margin: 0 auto 10px;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin: 1.5rem 0;
+        }
+
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: background 0.2s, transform 0.2s;
+            margin: 0;
+        }
+
+        .footer-social a:hover {
+            background: var(--accent-primary);
+            transform: translateY(-3px);
+            text-decoration: none;
+        }
+
+        .footer-social svg {
+            width: 22px;
+            height: 22px;
+            fill: white;
         }
 
         .access-row {
@@ -859,6 +1064,11 @@
             .packs-grid {
                 gap: 1rem;
             }
+
+            .ateliers-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -889,6 +1099,7 @@
             <ul id="nav-menu">
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#specialites">Spécialités</a></li>
+                <li><a href="#ateliers-gratuits">Ateliers gratuits</a></li>
                 <li><a href="#tarifs">Tarifs</a></li>
                 <li><a href="#formation">Mes formations</a></li>
                 <li><a href="#parcours">À propos</a></li>
@@ -1107,6 +1318,72 @@
             </div>
         </section>
 
+        <!-- ==================== ATELIERS GRATUITS ==================== -->
+        <section id="ateliers-gratuits">
+            <h3>Ateliers gratuits 2026</h3>
+            <p>Au Féminin Pluriel vous propose des <strong>ateliers gratuits</strong> tout au long de l'année 2026 pour vous informer, vous accompagner et échanger dans un cadre bienveillant. Places limitées, réservation par mail ou SMS.</p>
+
+            <div class="ateliers-grid">
+                <!-- Atelier Environnement sain -->
+                <div class="atelier-card">
+                    <span class="atelier-badge">Gratuit</span>
+                    <h4>Environnement sain pour bébé</h4>
+                    <p class="atelier-subtitle">Conseils pratiques et simples</p>
+                    <p>Des clés concrètes pour limiter l'exposition de bébé aux polluants du quotidien (produits d'hygiène, contenants alimentaires, qualité de l'air, puériculture...). Un moment d'échange bienveillant, pour repartir avec des solutions simples et accessibles, <strong>sans culpabilité</strong>.</p>
+                    <div class="atelier-meta">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                        Durée : 1h30 — de 10h à 11h30
+                    </div>
+                    <div class="atelier-dates">
+                        <strong>📅 Dates 2026 (samedis)</strong>
+                        <ul>
+                            <li>1er août</li>
+                            <li>29 août</li>
+                            <li>26 septembre</li>
+                            <li>7 novembre</li>
+                            <li>5 décembre</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Atelier Découverte portage -->
+                <div class="atelier-card">
+                    <span class="atelier-badge">Gratuit</span>
+                    <h4>Découverte du portage physiologique</h4>
+                    <p class="atelier-subtitle">Les bases avant de se lancer</p>
+                    <p>Les notions essentielles (physiologie de bébé, règles de sécurité) et la découverte des différents moyens de portage (écharpes, slings, préformés...). Un temps d'information et d'échange, <strong>sans pratique de nouage</strong>, pour faire votre choix sereinement.</p>
+                    <div class="atelier-meta">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                        Durée : 1h30 — de 10h à 11h30
+                    </div>
+                    <div class="atelier-dates">
+                        <strong>📅 Dates 2026 (samedis)</strong>
+                        <ul>
+                            <li>25 juillet</li>
+                            <li>15 août</li>
+                            <li>12 septembre</li>
+                            <li>10 octobre</li>
+                            <li>21 novembre</li>
+                            <li>19 décembre</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-info highlight" role="note">
+                <strong>📌 Réservation obligatoire — places limitées</strong>
+                <p style="margin-top: 0.5rem;">Par mail : <a href="mailto:aufemininpluriel29@gmail.com" style="color: var(--accent-dark); font-weight: 600; text-decoration: none;">aufemininpluriel29@gmail.com</a><br>
+                Par SMS : <a href="tel:0636381184" style="color: var(--accent-dark); font-weight: 600; text-decoration: none;">06 36 38 11 84</a></p>
+                <p style="margin-top: 0.5rem;">📍 20 avenue Yves Thépot • 1er étage - coursive Est • 29000 Quimper</p>
+            </div>
+        </section>
+
         <!-- ==================== TARIFS (GRILLE DE RECUADROS) ==================== -->
         <section id="tarifs">
             <h3>Les tarifs</h3>
@@ -1302,6 +1579,26 @@
 
             <p><strong>Engagement professionnel et cadre déontologique :</strong><br>
             Le respect du secret professionnel et des règles déontologiques est une boussole qui me guide au quotidien. Ancré en moi, il découle naturellement d'un autre pan de ma vie, celui de soignante, et imprègne chacune de mes pratiques. Les approches complémentaires proposées (hypnose, EMDR, accompagnement périnatal) visent le mieux-être et <strong>ne se substituent en aucun cas à une prise en charge médicale classique</strong>. Je collabore en parfaite synergie avec le tissu médico-social local (médecins, psychiatres, sages-femmes, psychologues, PMI) afin d'assurer la continuité et la sécurité de votre parcours.</p>
+
+            <!-- Réseaux sociaux -->
+            <div style="margin-top: 2.5rem;">
+                <strong style="font-size: 1.1rem; color: var(--text-main);">📱 Retrouvez Au Féminin Pluriel sur les réseaux</strong>
+                <p style="margin-top: 0.75rem;">Nouvelles dates d'ateliers, actualités du cabinet et contenus autour de la périnatalité : suivez-nous !</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61594111085775" class="social-link facebook" target="_blank" rel="noopener noreferrer" aria-label="Page Facebook Au Féminin Pluriel">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                        Facebook
+                    </a>
+                    <a href="https://www.instagram.com/au.feminin.pluriel/" class="social-link instagram" target="_blank" rel="noopener noreferrer" aria-label="Compte Instagram Au Féminin Pluriel">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                        </svg>
+                        Instagram
+                    </a>
+                </div>
+            </div>
         </section>
 
         <!-- ==================== ACCÈS ==================== -->
@@ -1366,14 +1663,9 @@
             </div>
 
             <div class="box-info highlight" role="note">
-                <strong>Situation de l'accessibilité PMR ♿ :</strong><br>
-                Bien que le bâtiment soit structurellement conçu pour l'accueil des Personnes à Mobilité Réduite, <strong>l'ascenseur est temporairement indisponible</strong> suite à une panne technique.<br>
-                Afin de garantir votre entière accessibilité à mon accompagnement, si le franchissement des escaliers s'avère impossible ou douloureux, je vous invite à m'en informer en amont. Nous mettrons en place des alternatives sur mesure.
-            </div>
-
-            <div class="box-info social" role="note">
-                <strong>📵 Vous cherchez quelque chose ?</strong><br>
-                Au Féminin Pluriel n'est pas sur les réseaux sociaux. N'ayant jamais eu de compte à titre personnel, je ne me sentirais pas légitime à vous demander de vous reconnecter avec votre vraie nature si je ne respectais pas la mienne. Je reste donc fidèle à moi‑même, et cet espace se passera des divers réseaux. Ralentissons :)
+                <strong>Accessibilité PMR ♿ :</strong><br>
+                Le cabinet est <strong>pleinement accessible aux Personnes à Mobilité Réduite</strong>. Le bâtiment est équipé d'un <strong>ascenseur</strong> qui vous permet d'accéder aisément au 1er étage, où se situe le cabinet (coursive Est).<br><br>
+                Si vous avez des besoins spécifiques ou souhaitez un accompagnement particulier lors de votre venue, n'hésitez pas à m'en informer en amont : nous ferons le nécessaire pour vous accueillir dans les meilleures conditions.
             </div>
 
         </section>
@@ -1384,6 +1676,21 @@
         <div class="badge-inclusion">🏳️‍🌈 🏳️‍⚧️ Inclusion &amp; Respect de la Diversité</div>
         <!-- Logo dans le pied de page -->
         <img class="logo-footer" src="logo_Au-Féminin_Pluriel_transparent.png" alt="Logo Au Féminin Pluriel">
+
+        <!-- Réseaux sociaux footer -->
+        <div class="footer-social">
+            <a href="https://www.facebook.com/profile.php?id=61594111085775" target="_blank" rel="noopener noreferrer" aria-label="Facebook Au Féminin Pluriel">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+            </a>
+            <a href="https://www.instagram.com/au.feminin.pluriel/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Au Féminin Pluriel">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+            </a>
+        </div>
+
         <p>&copy; 2026 Au Féminin Pluriel – Anne-Laure JANNES. Tous droits réservés.</p>
         <p><a href="#">Mentions Légales</a> | <a href="#">Politique de Confidentialité</a></p>
         <p style="margin-top: 15px;">Cabinet d'accompagnement thérapeutique et périnatal – Quimper (29000).</p>
